@@ -18,6 +18,7 @@ h3 {
 
 body {
 	background-color: white;
+	height: 5000px;
 }
 
 .page-width {
@@ -33,17 +34,27 @@ body {
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;
+	z-index: 2;
 }
 
 
 .top-menu__search {
+	position: fixed;
 	height: 45px;
-	width: 70%;
+	width: 44%;
 	background-color: white;
 	box-shadow: 0px 3px 10px 0.5px #CCC;
 	border-radius: 50px;
 	margin-top: 70px;
 	margin-left: 10px;
+	z-index: 2;
+	transition: 0.5s;
+}
+
+.top-menu__search--collapsed {
+	width: 45px !important;
+	margin-left: 42%;
+	transition: 0.5s;
 }
 
 .top-menu__search:hover {
@@ -52,16 +63,38 @@ body {
 	transition: 0.1s;
 }
 
+.search__icon {
+	height: 15px;
+	width: 15px;
+	margin-top: 15px;
+	margin-left: 25px;
+}
+
+.search__icon--collapsed {
+	margin-left: 15px !important;
+}
+
+.search__input {
+	outline: none;
+	border: none;
+	width: 90%;
+	height: 30px;
+	margin-left: 10px;
+	font-size: 17px;
+}
+
+
 .top-menu__buttons {
 	height: 45px;
-	width: 23%;
+	width: 15%;
 	box-shadow: 0px 3px 10px 0.1px #CCC;
+	background-color: white;
 	border-radius: 50px;
 	margin: auto;
-	margin-right: 10px;
+	margin-left: 46%;
 	margin-top: 70px;
 	padding-top: 12px;
-	position: relative;
+	position: fixed;
 }
 
 .top-menu__buttons:hover {
