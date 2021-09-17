@@ -29,3 +29,15 @@ $(".top-menu__search").click( function() {
 	$(".top-menu__buttons").removeClass("top-menu__buttons--collapsed");
 	$("#buttons__despre").show();
 })
+
+var counter = 0;
+setInterval( function() {
+
+	if (counter % 2 === 0) {
+		$('#main-presentation').fadeOut(1000);
+	} else {
+		$('#main-presentation').fadeIn(1000);
+	}
+
+	counter++;
+}, 6000);
