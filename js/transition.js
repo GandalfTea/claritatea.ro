@@ -41,3 +41,18 @@ setInterval( function() {
 
 	counter++;
 }, 6000);
+
+
+$(".wrapper__click-catch--left").click( function(event) {
+	event.preventDefault();
+	$('.wrapper__overflow').animate({
+		scrollLeft: "-=500px"
+	}, "slow");
+});
+	
+$(".wrapper__click-catch--right").click( function(event) {
+	event.preventDefault();
+	$('.wrapper__overflow').animate({
+		scrollLeft: "+=500px"
+	}, "slow");
+});

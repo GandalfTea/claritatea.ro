@@ -30,7 +30,7 @@ body {
 /* 		TOP MENU 	||  */
 .top-menu {
 	height: 200px;
-	width: 70vw;
+	width: 74vw;
 	margin: auto;
 	overflow: hidden;
 	display: flex;
@@ -44,12 +44,17 @@ body {
 	height: 45px;
 	width: 40%;
 	background-color: white;
-	box-shadow: 0px 3px 10px 0.5px #CCC;
 	border-radius: 50px;
 	margin-top: 70px;
 	margin-left: 10px;
 	z-index: 20;
 	transition: 0.5s;
+	  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+	                0 2px 2px rgba(0,0,0,0.11), 
+					              0 4px 4px rgba(0,0,0,0.11), 
+								                0 6px 8px rgba(0,0,0,0.11),
+												              0 8px 16px rgba(0,0,0,0.11);
+
 }
 
 .top-menu__search--collapsed {
@@ -60,8 +65,15 @@ body {
 
 .top-menu__search:hover {
 	margin-top: 69px;
-	box-shadow: 0px 6px 10px 0.1px #Ccc;
 	transition: 0.1s;
+	box-shadow:
+	  1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
+	    4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
+		  8px 8.3px 10px rgba(0, 0, 0, 0.073),
+		    14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
+			  26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
+			    64px 66px 80px rgba(0, 0, 0, 0.07)
+				;
 }
 
 .search__icon {
@@ -90,7 +102,6 @@ body {
 .top-menu__buttons {
 	height: 45px;
 	width: 15%;
-	box-shadow: 0px 3px 10px 0.1px #CCC;
 	background-color: white;
 	border-radius: 50px;
 	margin: auto;
@@ -101,12 +112,25 @@ body {
 	position: fixed;
 	z-index: 20;
 	transition: 0.1s; 
+	  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+	                0 2px 2px rgba(0,0,0,0.11), 
+					              0 4px 4px rgba(0,0,0,0.11), 
+								                0 6px 8px rgba(0,0,0,0.11),
+												              0 8px 16px rgba(0,0,0,0.11);
+
 }
 
 .top-menu__buttons:hover {
 	margin-top: 69px;
-	box-shadow: 0px 6px 10px 0.1px #Ccc;
 	transition: 0.1s;
+	box-shadow:
+	  1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
+	    4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
+		  8px 8.3px 10px rgba(0, 0, 0, 0.073),
+		    14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
+			  26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
+			    64px 66px 80px rgba(0, 0, 0, 0.07)
+				;
 }
 
 .top-menu__buttons a {
@@ -132,21 +156,33 @@ body {
 .top-menu__submit {
 	width: 12%;
 	height: 45px;
-	box-shadow: 0px 3px 10px 0.1px #CCC;
 	background-color: white;
 	border-radius: 50px;
 	margin: auto;
 	margin-top: 70px;
-	margin-right: 10px;
+	margin-right: 70px;
 	padding-top: 12px;
 	overflow: hidden;
-	background-image: url("../img/main.jpg")
+	background-image: url("../img/main.jpg");
+	  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+	                0 2px 2px rgba(0,0,0,0.11), 
+					              0 4px 4px rgba(0,0,0,0.11), 
+								                0 6px 8px rgba(0,0,0,0.11),
+												              0 8px 16px rgba(0,0,0,0.11);
+
 }
 
 .top-menu__submit:hover {
 	margin-top: 69px;
-	box-shadow: 0px 6px 10px 0.1px #Ccc;
 	transition: 0.1s;
+	box-shadow:
+	  1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
+	    4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
+		  8px 8.3px 10px rgba(0, 0, 0, 0.073),
+		    14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
+			  26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
+			    64px 66px 80px rgba(0, 0, 0, 0.07)
+				;
 }
 
 #buttons_submit {
@@ -208,7 +244,8 @@ body {
 .max-width{
 	width: 100vw;
 	max-width: 1920px;
-	height: 200vh;
+	height: auto;
+	min-height: 300vh;
 	position: relative;
 }
 
@@ -233,7 +270,7 @@ body {
 }
 
 .main-presentation__buttons {
-	position: absolute;
+	position: relative;
 	top: 52%;
 	display: flex;
 	flex-direction: row;
@@ -295,7 +332,7 @@ body {
 .main__text {
 	width: 1000px;
 	margin: auto;
-	margin-top: 150px;
+	margin-top: 100px;
 }
 
 .text__title {
@@ -326,4 +363,60 @@ body {
 	font-weight: 600;
 	text-align: right;
 	margin-top: 50px;
+}
+
+
+/*		OLDER MAGAZINES		||		*/
+
+.older__wrapper {
+	height: auto;
+	position: relative;
+}
+
+.wrapper__overflow {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	margin-left: 50%;
+	transform: translate(-50%, 0%);
+	margin-top: 250px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.wrapper__overflow::-webkit-scrollbar {
+	display: none;
+}
+
+.older__img {
+	height: 500px;	
+}
+
+.older__magazine {
+	margin-left: 50px;
+}
+
+.older__img--first {
+	margin-left: 0px;
+}
+
+.wrapper__click-catch--left {
+	position: absolute;
+	height: 700px;
+	width: 20%;
+	margin-top: -100px;
+	z-index: 50;
+	cursor: url("../img/left-arrow.png"), auto;
+}
+
+
+.wrapper__click-catch--right {
+	position: absolute;
+	height: 700px;
+	width: 20%;
+	margin-left: 85%;
+	top: 0;
+	margin-top: -100px;
+	z-index: 50;
+	cursor: url("../img/right-arrow.png"), auto;
 }
