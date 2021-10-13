@@ -1,0 +1,250 @@
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+p,
+a,
+h1,
+h2,
+h3 {
+	font-family: "Lato";
+}
+
+body {
+	background-color: white;
+	height: 5000px;
+}
+
+.admin-panel {
+	display: none;
+	width:auto;
+	height: auto;
+	max-width: 1920px;
+	overflow: hidden;
+}
+
+
+/* 		PRELOAD 		*/
+
+.edit {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#icon {
+	width: 200px;
+	position: fixed;
+	top: 50px;
+	left: 50px;
+}
+
+#title {
+	font-size: 23px;
+	width: 80px;
+	margin: auto;
+}
+
+#add_new {
+	position: relative;
+	height: 45px;
+	width: 45px;
+	border-radius: 50px;
+	background-color: white;
+	margin-left: 50%;
+	transform: translate(-50%, 0%);
+	margin-top: 50px;
+	outline: none;
+	border: none;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+				0 2px 2px rgba(0,0,0,0.11), 
+				0 4px 4px rgba(0,0,0,0.11), 
+				0 6px 8px rgba(0,0,0,0.11),
+				0 8px 16px rgba(0,0,0,0.11);
+	transition: 0.2s;
+}
+
+#add_new:hover {
+	transition: 0.2s;
+	box-shadow: 1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
+	    		4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
+		  		8px 8.3px 10px rgba(0, 0, 0, 0.073),
+		    	14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
+			 	26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
+			    64px 66px 80px rgba(0, 0, 0, 0.07);
+	margin-top: 48px;
+}
+
+#button_photo {
+	width: 15px;
+	margin-top: 5px;
+}
+
+
+/* 		JS CLASES 		*/
+
+.news-field__entry--first {
+	position: relative;
+	height: auto;
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	margin-left: 50%;
+	transform: translate(-50%, 0%);
+	margin-top: 50px;
+	min-width: 600px;
+	width: auto;
+	transition: 0.5s;
+}
+
+.news-field__entry {
+	position: relative;
+	height: auto;
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+	margin-left: 50%;
+	transform: translate(-50%, 0%);
+	min-width: 600px;
+	width: auto;
+	transition: 0.5s;
+}
+
+.news-field__buttons--encap {
+	width: auto;
+	height: 100%;
+	right: 0;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.news-field__text {
+	position: relative;
+	transition: 0.5s;
+	display: flex;
+	flex-direction: row;
+	height: auto;
+	width: 600px;
+	border-radius: 20px;
+	background-color: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+	            0 2px 2px rgba(0,0,0,0.11), 
+				0 4px 4px rgba(0,0,0,0.11), 
+				0 6px 8px rgba(0,0,0,0.11),
+				0 8px 16px rgba(0,0,0,0.11);
+}
+
+.news-field__text:hover {
+	transition: 0.5s;
+	box-shadow: 1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
+	    		4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
+		  		8px 8.3px 10px rgba(0, 0, 0, 0.073),
+		    	14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
+			  	26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
+			    64px 66px 80px rgba(0, 0, 0, 0.07);
+}
+
+.news-field__entry:hover {
+	margin-top: 48px;
+	margin-bottom: 40px;
+}
+.news-field__entry--first:hover {
+	margin-top: 68px;
+	margin-bottom: 40px;
+}
+
+.news-field__entry:hover .news-field__buttons--del {
+	display: block;
+	transition: 0.3s;
+}
+.news-field__entry:hover .news-field__buttons--edit {
+	display: block;
+	transition: 0.3s;
+}
+.news-field__entry--first:hover .news-field__buttons--del {
+	display: block;
+	transition: 0.3s;
+}
+.news-field__entry--first:hover .news-field__buttons--edit {
+	display: block;
+	transition: 0.3s;
+}
+
+.news-field__textfield {
+	font-size: 18px;
+	font-family: "Lato", "Helvetica";
+	font-weight: normal;
+	width: 600px;
+	height: 150px;
+	padding: 30px;
+	margin-left: 20px;
+	outline: none;
+	border: none;
+	resize: none;
+}
+
+.news-field__buttonsDiv {
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	margin-left: 5%;
+	display: none;
+}
+
+.news-field__buttons--save,
+.news-field__buttons--edit,
+.news-field__buttons--del {
+	display: none;
+	height: 45px;
+	width: 45px;
+	outline: none;
+	border: none;
+	background-color: #eee;
+	border-radius: 50px;
+	margin: auto;
+	margin-top: 10px;
+	transition: 0.3s;
+}
+
+
+
+.news-field__buttons--edit {
+	margin-top: 0px;
+}
+
+.news-field__buttons--save:hover,
+.news-field__buttons--edit:hover,
+.news-field__buttons--del:hover {
+	transition: 0.1s;
+	box-shadow: 1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
+	    		4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
+		  		8px 8.3px 10px rgba(0, 0, 0, 0.073),
+		    	14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
+			  	26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
+			    64px 66px 80px rgba(0, 0, 0, 0.07);
+}
+
+
+#del {
+	transform: rotate(45deg);
+	width: 15px;
+	margin-top: 5px;
+}
+
+#edit-button {
+	width: 20px;
+	margin-top: 5px;
+}
+

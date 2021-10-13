@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+
+<html lang='en'>
+	<head>
+		<title>Admin - Claritatea</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+		<meta charset='UTF-8'/>
+		<link rel='icon' type='image/png' href=''>
+
+		<link rel='stylesheet' href='./styles/admin.css'>
+		<link rel='stylesheet' href='./styles/login.css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+		<script src="./js/login.js"></script>
+
+	</head>
+
+	<body>
+
+		<div class='login'>
+			<img src='./img/title.png' type='image/png' id='background__title'>
+			<h1 class='page_title'>Autentificare</h1>
+			<form>
+				<input type='text' id='token' value='7208b932-4d8d-46f0-97b5-259c7b6d1fb6'>
+				<input type='button' onclick='checkKey(this)' value='OK' id='send'>
+			</form>
+		</div>
+
+
+		<div class='admin-panel'>
+			<img src='./img/title.png' type='image/png' id='icon'>
+			<div class='edit' id='edit'>
+				<h1 id='title'>Noutati</h1>
+
+				<button id='add_new' onclick='addNewsField()'/><img src='./img/plus.svg' type='image/svg' id='button_photo'></button>
+			</div>
+		</div>
+
+		<script src="./js/admin.js"></script>
+		<script src="./js/admin-ui.js"></script>
+	</body>
+</html>

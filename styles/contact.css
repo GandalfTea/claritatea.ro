@@ -149,14 +149,13 @@ h3 {
 
 
 #form__text {
-	height: 400px;
+	height: 300px;
 	width: 400px;
 	background-color: white;
 	border-radius: 30px;
 	border: none;
 	outline: none;
-	padding: 10px;
-	padding-left: 30px;
+	padding: 30px;
 	margin-top: 10px;
 	resize: none;
 	font-family: "Lato";
