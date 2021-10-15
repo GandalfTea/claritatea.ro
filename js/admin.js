@@ -13,10 +13,12 @@
 
 // Data Pipeline
 
-function getJSON() {
+async function getJSON() {
+
 	const token = sessionStorage.getItem("mytoken");
 
-	fetch('https://jsonbin.org/gandalftea/wizards', {
+	var dta = await fetch('https://jsonbin.org/gandalftea/claritatea-news', {
+        method: "GET",
 		headers: {
 			"content-type": "application/json",
 			"authorization" : "bearer " + token 
@@ -26,34 +28,48 @@ function getJSON() {
 			return response.json();
 		}
 		return promise.reject(response);
-	}).then(function(data) {
-			console.log(data.length);
-
+	}).then(function(data) {   
+        return data;
 	}).catch(function(error) {
 		console.warn(error);
 	});
 
+    return dta
 }
 
-function createDOM() {
-
+export async function getDataPipeline() {
+    // check if data is err
+    var data = await getJSON();
+    for(var i = 1; i < 5; i++) {
+        if(data[i] !== undefined) {
+            addNewsField(decode_utf8(data[i]));
+        }
+    }
 }
 
-function getDataPipeline() {
 
+// helpers
+function encode_utf8(s) {
+    return unescape(encodeURIComponents(s));
 }
 
+function decode_utf8(s) {
+    return decodeURIComponents(escape(s));
+}
 
 
 // UI Elements
 
 var fields = 0;
 
+window.addNewsField = addNewsField;
+
 function addNewsField( value = "" ) {
 	fields += 1;
 
 	var entry = document.createElement("div");
 	entry.classList.add("news-field__entry--first"); 
+    entry.id = fields;
 
 	var text = document.createElement("div");
 	text.classList.add("news-field__text")
@@ -84,7 +100,7 @@ function addNewsField( value = "" ) {
 	entry.appendChild(text);
 	entry.appendChild(buttons);
 	
-	// change class for all existing to have correct margin.
+	// change class for all existing entries to have correct margin.
 	$('.news-field__entry--first').each( function() {
 		$(this).removeClass("news-field__entry--first");
 		$(this).addClass("news-field__entry");
@@ -100,36 +116,66 @@ function addNewsField( value = "" ) {
 		console.log("HIDE THE BUTTON BITCH");
 		$('#add_new').hide();
 	}
-	console.log("FIELDS :" + fields);
+
+    // Initial creation of field:
+    // * Replace Edit button with Save
+    // * Writable text
+    // When click save or outside box:
+    // * textbox is disabled
+    // * Save turns to Edit
 }
 
-
+window.removeNewsField = removeNewsField;
 function removeNewsField(entry) {
 	fields -= 1;
+    var id = $(input).parent().parent().attr("id").toString();
+
+	// remove from database
+	// save in buffer to allow for undo.
+
+    
+
+  /*  fetch('https://jsonbin.org/gandalftea/claritatea-news/' + id,  {
+        method: "DELETE",
+        headers: {
+            "authorization" : "bearer " + sessionStorage.getItem("mytoken")
+        }
+    }).then(function(response) {
+        if(response.ok) {
+           return response.json; 
+        }
+        return promise.reject(response);
+    }).then(function(data) {
+        console.log(data);
+    }).catch(err) {
+        console.warn(err);
+    };
+
+*/
 	$(entry).parent().parent().remove();
 
 	if(fields > 2) {
 		console.log("SHOW THE BUTTON BITCH");
 		$('#add_new').show();
 	}
-
-	// remove from database
-	// save in buffer to allow for undo.
 }
 
+window.saveNewsField = saveNewsField;
 function saveNewsField(input) {
+    var id = $(input).parent().parent().attr("id").toString();
 	input = $(input).parent().parent().find(".news-field__textfield").eq(0).text();
 	
 	// update file
 	
 	fetch('https://jsonbin.org/gandalftea/claritatea-news', {
-		method: "POST",
+		method: "PATCH",
 		headers: {
 			"authorization" : "bearer " + sessionStorage.getItem("mytoken")
 		},
 
 		body: JSON.stringify({
-			"Content" : input
+			[id] : encode_utf8(input)
+
 		})
 		
 	}).then(function (response) {
@@ -145,3 +191,12 @@ function saveNewsField(input) {
 	});
 }
 	
+
+
+function editNewsField() {
+    // Save data to cache before allow edit.
+    // Allow text edit
+    // Change buttons
+    // Lock text field on save press OR
+    // Revert to before edit if cancel press.
+}

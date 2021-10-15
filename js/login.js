@@ -1,10 +1,5 @@
 
-//if(localStorage.getItem("myToken") === null) {
-//	$('.admin-panel').hide();
-//} else {
-//	$('.login').hide();
-//	// . . .
-//}
+import  { getDataPipeline } from './admin.js'
 
 const correctHash = 'e03f94b3e452e6666315e95cebfc35e526e0c45e6f392648edc827249a7e19f6bfa67dfb7087636d54243093ae21f49d443a26b672d9a0b36922c1eb90564eb6';
 
@@ -17,12 +12,12 @@ async function digestInput(input) {
 	return hashHex;
 }
 
+window.checkKey = checkKey;
 function checkKey(buttonPress) {
+    // remove button function to prevent multiple presses
 	const input = buttonPress.previousElementSibling.value;
 	digestInput(input).then(buffer => {
 		if(buffer === correctHash) {
-			$('.login').hide();
-			$('.admin-panel').show()
 
 			fetch('https://jsonbin.org/_/bearer', {
 				headers: {
@@ -35,11 +30,18 @@ function checkKey(buttonPress) {
 				}
 				return promise.reject(response);
 			}).then(function(data) {
+                // GET data from jsonbin
+  				sessionStorage.setItem('mytoken', data.token);
+                getDataPipeline();
 				console.log(data);
-				sessionStorage.setItem('mytoken', data.token);
+
+                // Change Admin UI
+			    $('.login').hide();
+			    $('.admin-panel').show()
 			}).catch(function(error) {
 				console.warn(error);
 			});
+
 
 		} else {
 			$('#token').val("");
