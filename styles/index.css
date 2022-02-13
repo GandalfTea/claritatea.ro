@@ -18,7 +18,6 @@ h3 {
 
 body {
 	background-color: white;
-	height: 5000px;
 }
 
 .page-width {
@@ -31,11 +30,12 @@ body {
 .top-menu {
 	height: 200px;
 	width: 74vw;
-	margin: auto;
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;
-	z-index: 2;
+	z-index: 69;
+	position: absolute;
+	left: 15vw;
 }
 
 
@@ -102,8 +102,6 @@ body {
 .top-menu__buttons {
 	height: 45px;
 	width: 15%;
-	background-color: white;
-	border-radius: 50px;
 	margin: auto;
 	margin-left: 44%;
 	margin-top: 70px;
@@ -112,25 +110,14 @@ body {
 	position: fixed;
 	z-index: 20;
 	transition: 0.1s; 
+	background-color: white;
+	border-radius: 30px;
 	  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
 	                0 2px 2px rgba(0,0,0,0.11), 
 					              0 4px 4px rgba(0,0,0,0.11), 
 								                0 6px 8px rgba(0,0,0,0.11),
 												              0 8px 16px rgba(0,0,0,0.11);
 
-}
-
-.top-menu__buttons:hover {
-	margin-top: 69px;
-	transition: 0.1s;
-	box-shadow:
-	  1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
-	    4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
-		  8px 8.3px 10px rgba(0, 0, 0, 0.073),
-		    14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
-			  26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
-			    64px 66px 80px rgba(0, 0, 0, 0.07)
-				;
 }
 
 .top-menu__buttons a {
@@ -146,10 +133,17 @@ body {
 }
 
 .top-menu__buttons--collapsed {
+	background-color: white;
+	border-radius: 30px;
 	width: 8%;
 	margin-left: 4%; 
 	transition: 0.5s; 
 	padding-left: 1%;
+	  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+	                0 2px 2px rgba(0,0,0,0.11), 
+					              0 4px 4px rgba(0,0,0,0.11), 
+								                0 6px 8px rgba(0,0,0,0.11),
+												              0 8px 16px rgba(0,0,0,0.11);
 }
 
 
@@ -197,31 +191,61 @@ body {
 
 
 /* 		TITLE 	 ||  */
-.background {
-	background-color: #EDEDED;
-	width: auto;
-	height: auto;
+
+
+#background-div {
+	position: absolute;
+	width: 100%;
 	margin: auto;
+	z-index: 3;
+	text-shadow:  5px 5px 10px black;
 }
 
+#background {
+	z-index: 1;
+	object-fit: cover;
+	width: 100%;
+	height: 100vh;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+	            0 2px 2px rgba(0,0,0,0.11), 
+					    0 4px 4px rgba(0,0,0,0.11), 
+							0 6px 8px rgba(0,0,0,0.11),
+							0 8px 16px rgba(0,0,0,0.11);
+}
+
+
+#background-second {
+	display: none;
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
 #background__title {
-	width: 30vw;
+	width: 35vw;
+	font-size: 6vw;
+	font-weight: 1000;
+	color: white;
+	opacity: 85%;
 	height: auto;
 	margin-left: 50%;
 	transform: translate(-50%, 0%);
-	margin-top: 40px;
+	margin-top: 45vh;
+	z-index: 3;
 }
 
-.background h1 {
+#subtitle {
 	width: 25vw;
 	margin: auto;
-	margin-top: 30px;
+	margin-top: 15vh;
 	font-weight: 600;
 	font-size: 25px;
 	text-align: center;
 }
 
-.background h2 {
+#background-div h2 {
 	width: 28vw;
 	text-align: justify;
 	font-weight: normal;
@@ -245,7 +269,6 @@ body {
 	width: 100vw;
 	max-width: 1920px;
 	height: auto;
-	min-height: 300vh;
 	position: relative;
 }
 
@@ -258,6 +281,8 @@ body {
 	z-index: 2;
 	top: 0;
 	margin-top: 10%;
+	transition: 0.5s;
+	border-radius: 5px;
 }
 
 #second-presentation {
@@ -267,6 +292,7 @@ body {
 	transform: translate(-50%, 0%);
 	margin-top: 10%;
 	z-index: 1;
+	border-radius: 5px;
 }
 
 .main-presentation__buttons {
@@ -379,6 +405,8 @@ body {
 
 .older__wrapper {
 	height: auto;
+	width: 100%;
+	margin: auto;
 	position: relative;
 }
 
@@ -405,6 +433,7 @@ body {
 				0 4px 4px rgba(0,0,0,0.11), 
 				0 6px 8px rgba(0,0,0,0.11),
 				0 8px 16px rgba(0,0,0,0.11);
+	border-radius: 5px;
 	transition: 0.5s;
 }
 
@@ -453,4 +482,141 @@ body {
 	margin-top: -100px;
 	z-index: 50;
 	cursor: url("../img/right-arrow.png"), auto;
+}
+
+
+/*		NEWS		*/
+
+.news {
+	width: 850px;
+	margin: auto;
+}
+
+.news__title {
+	font-size: 22px;
+	font-weight: 600;
+	color: black;
+	width: 100px;
+	margin: auto;
+	margin-bottom: 100px;
+}
+
+.news-entries {
+	margin-top: 50px;
+}
+
+.news-entry {
+	display: flex;
+	flex-direction: row;
+	margin-top: 50px;
+	font-size: 18px;
+}
+
+.news-entry__date {
+	font-weight: bold;
+	width: 150px;
+}
+
+.news-entry__text {
+	width: 700px;
+}
+
+
+
+/*		NEWSLETTER		*/
+
+.newsletter {
+	width: 350px;
+	margin: auto;
+	margin-top: 20vh; 
+}
+
+
+.newsletter__title {
+	margin-bottom: 50px;
+}
+
+#newsletter-input {
+	width: 350px;
+	height: 35px;
+	border-radius: 50px;
+	padding: 10px 30px 10px 50px;
+	font-size: 18px;
+	background-color: white;
+	outline: none;
+	border: none;
+	transition: 0.2s;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+	            0 2px 2px rgba(0,0,0,0.11), 
+				0 4px 4px rgba(0,0,0,0.11), 
+				0 6px 8px rgba(0,0,0,0.11),
+				0 8px 16px rgba(0,0,0,0.11);
+}
+
+#newsletter-input:hover {
+	transition: 0.2s;
+	box-shadow: 1.8px 1.8px 2.2px rgba(0, 0, 0, 0.052),
+	    		4.3px 4.4px 5.3px rgba(0, 0, 0, 0.067),
+		  		8px 8.3px 10px rgba(0, 0, 0, 0.073),
+		    	14.3px 14.7px 17.9px rgba(0, 0, 0, 0.075),
+			  	26.7px 27.6px 33.4px rgba(0, 0, 0, 0.073),
+			    64px 66px 80px rgba(0, 0, 0, 0.07);
+}
+
+
+
+
+/*		FOOTER		*/
+
+.footer {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	margin: auto;
+	margin-top: 30vh;
+	margin-bottom: 5vh;
+}
+
+.footer-left {
+	display: flex;
+	flex-direction: row;
+	font-size: 15px;
+}
+
+.footer-left div {
+	margin-top: 50px; 
+	margin-left: 10px;
+}
+
+.footer-left div p:first-child {
+	font-size: 18px; 
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.footer-right {
+	position: absolute;
+	right: 0;
+	bottom: 2vw;
+}
+
+.footer-right img {
+	margin-bottom: 20px;
+}
+
+.footer-right p {
+	margin-left: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #333
+}
+
+.school-logo {
+	width: 300px;
+}
+
+.logo {
+	width: 400px;
 }

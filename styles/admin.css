@@ -18,7 +18,7 @@ h3 {
 }
 
 body {
-	background-color: white;
+	background-color: #fafafa !important;
 	height: 5000px;
 }
 
@@ -248,3 +248,97 @@ body {
 	margin-top: 5px;
 }
 
+
+.entry-wrapper {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	width: 800px;
+}
+
+.entry-date {
+	position: absolute;	
+	margin-top: 80px;
+	font-weight: bold;
+	transition: 0.2s;
+}
+
+
+/*		LOADING UI		*/
+
+.loading-background {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	top: 0px;
+}
+
+.circle {
+	position: relative;
+	top: 40vh;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	overflow: hidden;
+	border-radius: 50%;
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: auto;
+}
+
+.circle-1 {
+	z-index: 2;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 150px;
+	width: 150px;
+	background-image: url(http://hack.lenotta.com/wp-content/uploads/2014/07/circleFull.svg);
+	-webkit-animation: cw 1.5s infinite;
+	animation: cw 1.5s infinite;
+
+	border: 20px solid white;
+	border-radius: 50%;
+}
+
+.circle-2 {
+	z-index: 1;
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	background-size: 100% auto;
+	background-image: url(http://hack.lenotta.com/wp-content/uploads/2014/07/circleFull.svg);
+	-webkit-animation: ccw 3s linear infinite;
+	animation: ccw 3s linear infinite;
+}
+
+
+@-webkit-keyframe cw {
+	0% { -webkit-transform: rotate(0deg); }
+	100% {-webkit-transform: rotate(360deg); }
+}
+
+@keyframes cw {
+	0% {transform: rotate(0deg); }
+	100% {transform: rotate(360deg); }
+}
+
+@-webkit-keyframe ccw {
+	0% { -webkit-transform: rotate(360deg); }
+	100% {-webkit-transform: rotate(0deg); }
+}
+
+@keyframes ccw {
+	0% {transform: rotate(360deg); }
+	100% {transform: rotate(0deg); }
+}
