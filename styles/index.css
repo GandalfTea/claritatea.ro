@@ -239,7 +239,7 @@ body {
 
 @media only screen and (max-width: 600px) {
    .top-menu {
-      width: 80vw;   
+      display: none;
    } 
 }
 
@@ -734,7 +734,7 @@ body {
     
     .older__img,
     .older__magazine {
-        height: 330px;
+        height: 300px;
     }
 
     .older__magazine {
