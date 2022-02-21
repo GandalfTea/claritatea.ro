@@ -5,7 +5,6 @@ document.addEventListener("scroll", searchCollapse);
 
 // TOP MENU COLAPSE
 
-
 function searchCollapse() {
 	if(document.body.scrollTop === 0) {
 		setTimeout( function() {
@@ -102,11 +101,9 @@ function changeImage(id, fromButton=false) {
     document.getElementById("author-name").innerHTML = "<strong>" + authors[idx] + "</strong>";
     document.getElementById("name").innerText = info[idx];
 
-    // change button selection
+    // change button 
     if(fromButton) {
-        console.log("CLEANING");
         for(let j = 0; j > NUM_IMG; j++) {
-            console.log(j)
             document.getElementById(j).style.backgroundColor = "#FFF";
         }
     }
@@ -132,8 +129,42 @@ if(change) {
 
 
 
+// PRESENTATION IMAGE FADE
+
+function fade(element, direction) {
+    var op;
+    direction === "in" ? op = 1 :  op = 0.1;
+    if(direction === "out") element.style.display = "block";
+    var timer = setInterval( () => {
+        if(direction === "in") {
+            if (op <= 0.001) {
+                clearInterval(timer);
+                element.style.display = "none";
+            }
+        } else { 
+            if( op >= 1) clearInterval(timer); 
+        }
+        element.style.opacity = op;
+        element.style.filter = "alpha(opacity=" + op * 1000 + ")";
+        direction === "in" ? op -= op*0.1 : op += op*0.1;
+    }, 50)
+}
+
+var counter = 1;
+setInterval( function() {
+	if (counter % 2 === 0) {
+        fade(document.getElementById("main-presentation"), "out");
+	} else {
+        fade(document.getElementById("main-presentation"), "in");
+	}
+	counter++;
+}, 6000);
+
+
+
 
 // MAGAZINE CAROUSEL
+
 $(".wrapper__click-catch--left").click( function(event) {
 	event.preventDefault();
 	$('.wrapper__overflow').animate({
@@ -147,21 +178,4 @@ $(".wrapper__click-catch--right").click( function(event) {
 		scrollLeft: "+=500px"
 	}, "slow");
 });
-
-
-
-// MAGAZINE IMAGE FADE
-
-var counter = 0;
-setInterval( function() {
-	if (counter % 2 === 0) {
-		$('#main-presentation').fadeOut(1000);
-	} else {
-		$('#main-presentation').fadeIn(1000);
-	}
-
-	counter++;
-}, 6000);
-
-
 
