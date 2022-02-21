@@ -1,0 +1,67 @@
+
+body {
+    overflow: visible;
+}
+
+#logo {
+    width: 1000px;
+    margin-top: 20vh;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+h1 {
+    margin-top: 10vh;
+    width: 400px;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    font-weight: 300;
+}
+
+.article p {
+    width: 500px;
+    margin: auto;
+    text-align: justify;
+    margin-top: 2vh;
+    font-family: "lato";
+    font-size: 15px;
+}
+
+.article {
+    margin-top: 10vh;
+}
+
+.back {
+    margin-top: 5vh;
+}
+
+.back:hover {
+    margin-top: 4.9vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .back {
+        margin-left: 5vw;
+    }
+
+    #logo {
+        width: 80vw;
+    }
+
+    h1 {
+        width: 80vw;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 3vh;
+    }
+
+    .article p {
+        width: 80vw;
+        font-size: 13px;
+        margin-top: 2vh;
+    }
+
+    .article {
+        margin-top: 5vh;
+    }
+}
