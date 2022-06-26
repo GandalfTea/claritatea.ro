@@ -1,0 +1,23 @@
+
+.title {
+   font-family: 'lato';
+    font-size: 20px;
+    width: 150px;
+    margin: auto; 
+    margin-top: 10vh;
+}
+
+.background {
+    width: 100vw;
+    height: 80vh;    
+    position: absolute;
+    bottom: 0px;
+    background-color: #DEDEDE;
+}
+
+.background img {
+    width: 70vw;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+}
+

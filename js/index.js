@@ -103,7 +103,7 @@ function changeImage(id, fromButton=false) {
 
     // change button 
     if(fromButton) {
-        for(let j = 0; j > NUM_IMG; j++) {
+        for(let j = 0; j < NUM_IMG; j++) {
             document.getElementById(j).style.backgroundColor = "#FFF";
         }
     }
